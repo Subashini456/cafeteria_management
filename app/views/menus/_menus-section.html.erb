@@ -1,0 +1,27 @@
+<section class="MenuSection">
+  <div class="MenuSectionTitle">
+    <p class="MenuSectionTitle-text"><%= section_title%></p>
+  </div>
+
+  <ul>
+    <% if menus.empty? %>
+      <p class="MenuItem MenuItem-NotAvilable">Not Available</p>
+    <% else %>
+      <% menus.each do |menu|%>
+        <li class="MenuItem">
+          <div class="MenuItem-container">
+            <label >
+              <p class="MenuItem-text">
+                <span class="AlignLeft"> <%= menu.name %> </span>
+                <span class="AlignRight"> Rs <%= menu.price %> </span>
+              </p>
+              <p class="MenuItemDescription-text">
+                <%= menu.description%>
+              </p>
+            </label>
+          </div>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+</section>

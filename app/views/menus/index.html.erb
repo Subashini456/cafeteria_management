@@ -1,0 +1,31 @@
+<main>
+  <article>
+    <h1 class="MenuPage-title">Cafeteria Management</h1>
+
+    <%= render partial: "menus-section", locals: {
+      section_title: "Breakfast",
+      menus: Menu.breakfast
+    } %>
+
+    <%= render partial: "menus-section", locals: {
+      section_title: "Lunch",
+      menus: Menu.lunch
+    } %>
+
+    <%= render partial: "menus-section", locals: {
+      section_title: "Dinner",
+      menus: Menu.dinner
+    } %>
+
+    <%= render partial: "menus-section", locals: {
+      section_title: "Beverages",
+      menus: Menu.beverages
+    } %>
+
+    <%= render partial: "menus-section", locals: {
+      section_title: "Snacks",
+      menus: Menu.snacks
+    } %>
+
+  </article>
+</main>

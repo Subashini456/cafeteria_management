@@ -1,0 +1,68 @@
+.MenuPage-title{
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  color:goldenrod;
+  text-align: center;
+}
+
+.MenuSection{
+  margin-bottom: 24px;
+}
+
+.MenuSectionTitle{
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  color: black;
+}
+
+.MenuSectionTitle-text{
+  font-size: 32px;
+  font-weight: 600;
+  margin-right: 8px;
+  color:goldenrod
+}
+
+.MenuItem{
+  font-size: 20px;
+  color: #453C52;
+  margin-left: 16px;
+  margin-bottom: 4px;
+}
+
+.MenuItem-container{
+  padding: 3px 8px;
+}
+
+.MenuItem-container:hover{
+  background-color:cornsilk;
+  visibility: visible;
+}
+
+.MenuItemDescription-text{
+  font-size: 16px;
+  color: #453C52;
+  margin-left: 16px;
+  margin-bottom: 8px;
+}
+
+.MenuItem-text{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.AlignLeft{
+  float: left;
+}
+
+.AlignRight{
+  float: right;
+}
+
+.MenuItem-NotAvilable{
+  padding: 3px 8px;
+  color: darkgray;
+}
