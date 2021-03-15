@@ -10,42 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_12_120657) do
+ActiveRecord::Schema.define(version: 2021_03_15_091022) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "menu_categories", force: :cascade do |t|
-    t.string "menu_category_name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "menu_items", force: :cascade do |t|
-    t.bigint "menu_category_id"
+  create_table "menus", force: :cascade do |t|
     t.string "name"
-    t.string "description"
+    t.text "description"
     t.float "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "order_items", force: :cascade do |t|
-    t.bigint "order_id"
-    t.bigint "menu_item_id"
-    t.string "menu_item_name"
-    t.float "menu_item_price"
-  end
-
-  create_table "orders", force: :cascade do |t|
-    t.bigint "user_id"
-    t.date "date"
-    t.time "delivered_at"
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "role"
   end
 
 end
