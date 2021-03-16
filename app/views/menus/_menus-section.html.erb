@@ -15,11 +15,19 @@
                 <span class="AlignLeft"> <%= menu.name %> </span>
                 <span class="AlignRight"> Rs <%= menu.price %> </span>
               </p>
+
               <p class="MenuItemDescription-text">
                 <%= menu.description%>
               </p>
+
+              <% if @current_user.is_clerk? || @current_user.is_owner? %>
+                <%= form_with(url: "/menus/#{menu.id}",method: "delete") do %>
+                  <input class="DeleteMenu-button" type="submit" value="Delete" >
+                <% end %>
+              <% end %>
             </label>
           </div>
+
         </li>
       <% end %>
     <% end %>

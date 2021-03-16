@@ -1,4 +1,8 @@
 class Menu < ActiveRecord::Base
+  validates :name, presence: true
+  validates :price, presence: true
+  validates :menu_category, presence: true
+
   def to_pleasent_string
     #"#{id}.#{name} #{description} #{price} #{created_at} #{updated_at}"
   end

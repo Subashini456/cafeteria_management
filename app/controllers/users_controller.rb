@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     if user.save
       redirect_to "/"
     else
-      flash[:error] = "Your Signup attempt has failed. Please try again "
+      flash[:error] = user.errors.full_messages.join(", ")
       redirect_to new_user_path
     end
   end

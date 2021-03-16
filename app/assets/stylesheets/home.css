@@ -3,7 +3,7 @@
   text-align: center;
   padding-top: 100px;
   margin-bottom: 60px;
-  color: goldenrod;
+  color: #9F7F15;
 }
 
 .Home-authenticate {
@@ -13,8 +13,8 @@
 }
 
 .UserHeader {
-  padding: 10px;
-  background-color: lightgray;
+  padding: 30px;
+  background-color: #EDDA9C;
   font-size: 24px;
   margin-bottom: 10px;
   display: flex;

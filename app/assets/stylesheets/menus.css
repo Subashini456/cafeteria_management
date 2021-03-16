@@ -3,33 +3,31 @@
   font-weight: bold;
   line-height: 1.6;
   margin-bottom: 24px;
-  color:goldenrod;
+  color:#9F7F15;
   text-align: center;
+}
+
+li{
+  list-style-type:disc;
 }
 
 .MenuSection{
   margin-bottom: 24px;
 }
 
-.MenuSectionTitle{
-  display: flex;
-  align-items: center;
-  margin-bottom: 8px;
-  color: black;
-}
-
 .MenuSectionTitle-text{
   font-size: 32px;
   font-weight: 600;
   margin-right: 8px;
-  color:goldenrod
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color:#655A58;
 }
 
 .MenuItem{
   font-size: 20px;
   color: #453C52;
   margin-left: 16px;
-  margin-bottom: 4px;
 }
 
 .MenuItem-container{
@@ -46,6 +44,8 @@
   color: #453C52;
   margin-left: 16px;
   margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .MenuItem-text{
@@ -65,4 +65,45 @@
 .MenuItem-NotAvilable{
   padding: 3px 8px;
   color: darkgray;
+}
+
+.UsersOwner{
+  width:900px;
+  text-align: center;
+  border: 5px solid gray;
+  box-sizing: border-box;
+}
+
+.AddMenu-section {
+  margin-top: 30px;
+}
+
+.AddMenu-text{
+  font-size: 20px;
+  padding: 8px;
+}
+
+.AddMenu-label {
+  font-size: 20px;
+  font-weight: 600;
+  color: #555555;
+  margin-bottom: 8px;
+}
+
+.AddMenu-button{
+  font-size: 20px;
+  padding: 10px;
+  background-color:#9F7F15;
+  color: #ffffff;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.DeleteMenu-button{
+  font-size: 15px;
+  background-color:#9F7F15;
+  color: #ffffff;
+  border: 1px solid transparent;
+  border-radius: 8px;
 }

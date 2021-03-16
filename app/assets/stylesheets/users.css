@@ -3,7 +3,7 @@
   margin-bottom: 40px;
   font-size: 48px;
   text-align: center;
-  color: goldenrod;
+  color: #9F7F15;
 }
 
 .UsersNew {
@@ -28,7 +28,8 @@
 .Form-submit{
   font-size: 20px;
   padding: 10px;
-  background-color: gold;
+  background-color:#9F7F15;
+  color: #ffffff;
   border: 0;
   border-radius: 8px;
 }

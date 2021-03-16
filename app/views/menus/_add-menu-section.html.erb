@@ -1,0 +1,30 @@
+<section class="MenuSection">
+  <div>
+    <p class="MenuSectionTitle-text"><%= section_title%></p>
+  </div>
+
+  <section class="UsersOwner">
+      <%= form_with url: "/menus",method: "post" do%>
+        <div class="AddMenu-section">
+          <p class="AddMenu-label">Menu Name </p>
+          <input class="AddMenu-text" type="text" name="name">
+        </div>
+        <div class="AddMenu-section">
+          <p class="AddMenu-label">Menu Category </p>
+          <input class="AddMenu-text" type="text" name="menu_category">
+        </div>
+        <div class="AddMenu-section">
+          <p class="AddMenu-label">Description </p>
+          <input class="AddMenu-text" type="text" name="description">
+        </div>
+        <div class="AddMenu-section">
+          <p class="AddMenu-label">Price </p>
+          <input class="AddMenu-text" type="number" step="any" name="price">
+        </div>
+        <div class="AddMenu-section">
+          <input class="AddMenu-button" type="submit" value="Add" >
+        </div>
+      <% end %>
+    </section>
+
+</section>
