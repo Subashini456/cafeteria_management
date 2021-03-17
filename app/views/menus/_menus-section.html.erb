@@ -17,7 +17,16 @@
               </p>
 
               <p class="MenuItemDescription-text">
-                <%= menu.description%>
+                <tr>
+                  <td><%= menu.description%></td>
+                  <td>
+                    <%= form_for @orderfood do |form| %>
+                      <%= form.hidden_field :menu_id, :value => menu.id %>
+                      <%= form.number_field :quantity, :value => 1, :min => 1 %>
+                      <%= form.submit "Add to Cart" %>
+                    <% end %>
+                  </td>
+                </tr>
               </p>
 
               <% if @current_user.is_clerk? || @current_user.is_owner? %>

@@ -33,5 +33,10 @@
       menus: Menu.snacks
     } %>
 
+
+    <%= link_to "#{current_order.orderfoods.size} items with a value of #{current_order.total}", new_card_path%>
+    <%= link_to '<button class="DeleteMenu-button" type="button">New Post</button>'.html_safe, new_card_path%>
+
+
   </article>
 </main>

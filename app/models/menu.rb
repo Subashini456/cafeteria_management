@@ -1,5 +1,5 @@
 class Menu < ActiveRecord::Base
-  has_many :order_foods
+  has_many :orderfoods
 
   validates :name, presence: true
   validates :price, presence: true

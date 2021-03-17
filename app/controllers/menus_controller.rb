@@ -1,5 +1,7 @@
 class MenusController < ApplicationController
   def index
+    @menus = Menu.all
+    @orderfood = current_order.orderfoods.new
     #render plain: Menu.all.map { |menu| menu.to_pleasent_string }.join("\n")
     render "index"
   end

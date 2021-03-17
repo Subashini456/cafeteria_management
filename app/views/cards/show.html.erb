@@ -1,0 +1,12 @@
+<h3>hello</h3>
+
+<% @orderfoods.each do |item| %>
+
+    <h3><%= item.menu.name %></h3>
+    <h5><%= item.menu.price %></h5>
+    <h2>Subtotal: <%= item.subtotal %></h2>
+
+<% end %>
+
+
+<h3>Your current card value has a subtotal of: <%= current_order.total %></h3>
