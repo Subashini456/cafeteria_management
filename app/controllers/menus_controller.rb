@@ -1,6 +1,5 @@
 class MenusController < ApplicationController
   def index
-    @menu = Menu.all
     #render plain: Menu.all.map { |menu| menu.to_pleasent_string }.join("\n")
     render "index"
   end
