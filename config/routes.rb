@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :menus
   resources :users
   resources :orderfoods
+  resources :orders
   get "/cards" => "cards#show", as: :new_card
   get "/signin" => "sessions#new", as: :new_sessions
   post "/signin" => "sessions#create", as: :sessions
