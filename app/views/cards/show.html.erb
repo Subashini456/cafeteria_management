@@ -8,9 +8,11 @@
     <h3>Quantity : <%= item.quantity %></h3>
     <h5>Subtotal : <%= item.subtotal %></h5>
 
-    <%= link_to '<button class="Menu-button" type="button">Delete</button>'.html_safe, orderfood_path(item), method: :delete %>
+    <%= link_to '<button class="Menu-button" type="button">Remove</button>'.html_safe, orderfood_path(item), method: :delete %>
     <br>
 
 <% end %>
 
 <h3>Your current card value has a total of: <%= current_order.total %></h3>
+
+<%= link_to '<button class="Menu-button" type="button">Place Order</button>'.html_safe, order_path(current_order.id), method: :put,:onclick => "alert('Order Placed, will be delivered')" %>

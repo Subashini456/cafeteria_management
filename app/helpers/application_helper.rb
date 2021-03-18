@@ -3,7 +3,7 @@ module ApplicationHelper
     if Order.where(:user_id => current_user.id).exists? && !session[:order_id].nil?
       Order.find(session[:order_id])
     else
-      Order.new(user_id: current_user.id)
+      Order.new(user_id: current_user.id, status: "Unplaced Order")
     end
   end
 

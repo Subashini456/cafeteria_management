@@ -1,0 +1,14 @@
+<h4>hello</h4>
+
+<% @order.each do |item| %>
+  <tr>
+    <td><%= item.id %>
+    <td><%= item.user_id %>
+    <td><%= item.total %>
+    <td><%= item.status %>
+    <% if item.status == "Placed" %>
+      <%= link_to '<button class="Menu-button" type="button">Delivered</button>'.html_safe, order_path(item), method: :delete,:onclick => "alert('Are U sure')" %>
+    <% end %>
+  </tr>
+  <br/>
+<% end %>
