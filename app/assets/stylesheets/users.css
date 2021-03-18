@@ -17,6 +17,8 @@
 .Form-input {
   font-size: 20px;
   padding: 8px;
+  margin-left: 9px;
+  margin-right: 10px;
 }
 
 .FormInput-label {
