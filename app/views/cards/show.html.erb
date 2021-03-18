@@ -1,12 +1,16 @@
-<h3>hello</h3>
 
 <% @orderfoods.each do |item| %>
 
-    <h3><%= item.menu.name %></h3>
-    <h5><%= item.menu.price %></h5>
-    <h2>Subtotal: <%= item.subtotal %></h2>
+    <ul>
+        <li>Name : <%= item.menu.name %></li>
+    </ul>
+    <h3>Price : <%= item.menu.price %></h3>
+    <h3>Quantity : <%= item.quantity %></h3>
+    <h5>Subtotal : <%= item.subtotal %></h5>
+
+    <%= link_to '<button class="Menu-button" type="button">Delete</button>'.html_safe, orderfood_path(item), method: :delete %>
+    <br>
 
 <% end %>
 
-
-<h3>Your current card value has a subtotal of: <%= current_order.total %></h3>
+<h3>Your current card value has a total of: <%= current_order.total %></h3>

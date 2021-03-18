@@ -2,6 +2,7 @@
   <article>
     <h1 class="MenuPage-title">Cafeteria Management</h1>
 
+
     <% if @current_user.is_clerk? || @current_user.is_owner? %>
       <%= render partial: "add-menu-section", locals: {
         section_title: "Edit Menu Here"
@@ -33,9 +34,9 @@
       menus: Menu.snacks
     } %>
 
-
-    <%= link_to "#{current_order.orderfoods.size} items with a value of #{current_order.total}", new_card_path%>
-    <%= link_to '<button class="DeleteMenu-button" type="button">New Post</button>'.html_safe, new_card_path%>
+    <% if @current_user.is_customer? %>
+      <%= link_to '<button class="AddMenu-button AlignRight" type="button">View card</button>'.html_safe, new_card_path%>
+    <% end%>
 
 
   </article>

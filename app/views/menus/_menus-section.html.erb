@@ -20,10 +20,12 @@
                 <tr>
                   <td><%= menu.description%></td>
                   <td>
-                    <%= form_for @orderfood do |form| %>
-                      <%= form.hidden_field :menu_id, :value => menu.id %>
-                      <%= form.number_field :quantity, :value => 1, :min => 1 %>
-                      <%= form.submit "Add to Cart" %>
+                    <% if @current_user.is_customer? %>
+                      <%= form_for @orderfood do |form| %>
+                        <%= form.hidden_field :menu_id, :value => menu.id %>
+                        <%= form.number_field :quantity, :value => 1, :min => 1 %>
+                        <%= form.submit "Add to Cart" %>
+                      <% end %>
                     <% end %>
                   </td>
                 </tr>
@@ -31,7 +33,7 @@
 
               <% if @current_user.is_clerk? || @current_user.is_owner? %>
                 <%= form_with(url: "/menus/#{menu.id}",method: "delete") do %>
-                  <input class="DeleteMenu-button" type="submit" value="Delete" >
+                  <input class="Menu-button" type="submit" value="Delete" >
                 <% end %>
               <% end %>
             </label>
