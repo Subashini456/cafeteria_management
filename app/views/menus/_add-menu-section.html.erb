@@ -4,25 +4,25 @@
   </div>
 
   <section class="UsersOwner">
-      <%= form_with url: "/menus",method: "post" do%>
-        <div class="AddMenu-section">
-          <p class="AddMenu-label">Menu Name </p>
-          <input class="AddMenu-text" type="text" name="name">
-        </div>
+      <%= form_with url: "/menus",method: "post" do |form| %>
         <div class="AddMenu-section">
           <p class="AddMenu-label">Menu Category </p>
-          <input class="AddMenu-text" type="text" name="menu_category">
+          <%= form.select :menu_category,options_for_select([["Select One",""],"Breakfast","Lunch","Dinner","Beverages","Snacks"]) ,{},{:class => "AddMenu-text"}%>
+        </div>
+        <div class="AddMenu-section">
+          <p class="AddMenu-label">Menu Name </p>
+          <%= form.text_field :name, class: "AddMenu-text" %>
         </div>
         <div class="AddMenu-section">
           <p class="AddMenu-label">Description </p>
-          <input class="AddMenu-text" type="text" name="description">
+          <%= form.text_field :description, class: "AddMenu-text" %>
         </div>
         <div class="AddMenu-section">
           <p class="AddMenu-label">Price </p>
-          <input class="AddMenu-text" type="number" step="any" name="price">
+          <%= form.text_field :price, class: "AddMenu-text", step: "any" %>
         </div>
         <div class="AddMenu-section">
-          <input class="AddMenu-button" type="submit" value="Add" >
+          <%= form.submit "Add",class: "AddMenu-button" %>
         </div>
       <% end %>
     </section>

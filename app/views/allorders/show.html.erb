@@ -3,10 +3,10 @@
 <% @order.each do |item| %>
   <tr>
     <% if item.status == "Placed" %>
-      <td><%= item.id %></td>
-      <td><%= item.user_id %></td>
-      <td><%= item.total %></td>
-      <td><%= item.status %></td>
+      <td>Order id :<%= item.id %>, </td>
+      <td>User id : <%= item.user_id %>, </td>
+      <td>Total : <%= item.total %>, </td>
+      <td>Status : <%= item.status %> </td>
       <%= link_to '<button class="Menu-button" type="button">Delivered</button>'.html_safe, order_path(item), method: :delete,:onclick => "alert('Are U sure')" %>
     <% else %>
       <% item.destroy %>
