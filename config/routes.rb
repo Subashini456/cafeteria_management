@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :orderfoods
   resources :orders
   get "/allorders" => "allorders#show", as: :new_allorder
+  put "/allorders/:id" => "allorders#update", as: :update_allorder
   get "/cards" => "cards#show", as: :new_card
   get "/signin" => "sessions#new", as: :new_sessions
   post "/signin" => "sessions#create", as: :sessions

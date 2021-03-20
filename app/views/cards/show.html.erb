@@ -15,7 +15,7 @@
 
 <h3>Your current card value has a total of: <%= current_order.total %></h3>
 <% if Order.where(:user_id => current_user.id).exists? %>
-    <%= link_to '<button class="Menu-button" type="button">Place Order</button>'.html_safe, order_path(current_order.id), method: :put,:onclick => "alert('Order Placed, will be delivered')" %>
+    <%= link_to '<button class="Menu-button" type="button">Place Order</button>'.html_safe, order_path(current_order.id), method: :put,:onclick => "alert('Order Placed, will be delivered shortly')" %>
 <% else %>
-    <h1>please add values</h1>
+    <h1>please add values to card</h1>
 <% end %>
