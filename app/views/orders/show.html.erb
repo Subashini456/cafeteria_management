@@ -1,16 +1,17 @@
-<h4>hello</h4>
 
-<% @order.each do |item| %>
-  <tr>
-      <td>Order id :<%= item.id %>, </td>
-      <td>User id : <%= item.user_id %>, </td>
-      <td>Total : <%= item.total %>, </td>
-    <% if item.status == "Placed" %>
-      <td>Status : <%= item.status %> </td>
-      <%= link_to '<button class="Menu-button" type="button">Delivered</button>'.html_safe, order_path(item.id), method: :put,:onclick => "alert('Are U sure')" %>
-    <% else %>
-      <td>Status : <%= item.status %> </td>
-    <% end %>
-  </tr>
-  <br/>
-<% end %>
+</section>
+  <% @order.each do |item| %>
+    <section class="OrderFood-list">
+        <p>Order id :<%= item.id %> </p>
+        <p>User id : <%= item.user_id %> </p>
+        <p>Total : <%= item.total %></p>
+        <% if item.status == 1 %>
+          <p>Status : Placed </p>
+          <%= link_to '<button class="Add-button" type="button">Delivered</button>'.html_safe, order_path(item.id), method: :put,:onclick => "alert('Are U sure')" %>
+        <% elsif item.status == 2 %>
+          <p>Status : Delivered </p>
+        <% end %>
+    </section>
+    <br/>
+  <% end %>
+</section>

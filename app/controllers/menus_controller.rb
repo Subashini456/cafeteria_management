@@ -6,17 +6,25 @@ class MenusController < ApplicationController
     render "index"
   end
 
+  def new
+  end
+
+  def show
+    id = params[:id]
+    todo = Menu.find(id)
+    render plain: "Show"
+  end
+
   def create
     new_menu = Menu.new(create_menu)
-    if new_menu.save
-      redirect_to menus_path
-    else
-      flash[:error] = new_menu.errors.full_messages.join(", ")
-      redirect_to menus_path
-    end
+    error_condition(new_menu)
   end
 
   def update
+    up_menu = Menu.find(params[:id])
+    price = params[:price]
+    up_menu.price = price
+    error_condition(up_menu)
   end
 
   def destroy
@@ -25,7 +33,20 @@ class MenusController < ApplicationController
     redirect_to menus_path
   end
 
+  private
+
   def create_menu
     params.permit(:name, :description, :menu_category, :price)
+  end
+
+  private
+
+  def error_condition(menu)
+    if menu.save
+      redirect_to menus_path
+    else
+      flash[:error] = menu.errors.full_messages.join(", ")
+      redirect_to menus_path
+    end
   end
 end

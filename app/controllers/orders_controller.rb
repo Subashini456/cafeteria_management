@@ -1,9 +1,6 @@
 class OrdersController < ApplicationController
-  def index
-  end
-
   def create
-    Order.new(user_id: current_user.id, status: "Unplaced Order")
+    Order.new(user_id: current_user.id, status: 0)
   end
 
   def show
@@ -12,9 +9,9 @@ class OrdersController < ApplicationController
 
   def update
     uporder = Order.find(params[:id])
-    if uporder.status == "Unplaced Order"
+    if uporder.status == 0
       order_placed(uporder)
-    elsif uporder.status == "Placed"
+    elsif uporder.status == 1
       order_delivered(uporder)
     end
   end
@@ -28,7 +25,7 @@ class OrdersController < ApplicationController
   private
 
   def order_placed(uporder)
-    uporder.status = "Placed"
+    uporder.status = 1
     if uporder.save
       redirect_to new_card_path
     else
@@ -40,7 +37,7 @@ class OrdersController < ApplicationController
   private
 
   def order_delivered(uporder)
-    uporder.status = "Delivered"
+    uporder.status = 2
     if uporder.save
       redirect_to new_allorder_path
     else

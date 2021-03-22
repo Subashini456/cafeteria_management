@@ -1,0 +1,30 @@
+.OrderFood-main {
+  padding-top: 30px;
+}
+
+.OrderFood-list {
+  padding: 30px;
+  background-color:rgb(237, 232, 240);
+  font-size: 24px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.OrderFood-result {
+  padding: 30px;
+  font-size: 24px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content:center
+}
+
+.Add-button{
+  font-size: 20px;
+  padding: 10px;
+  float: right;
+  background-color:#9F7F15;
+  color: #ffffff;
+  border: 1px solid transparent;
+  border-radius: 8px;
+}
