@@ -7,7 +7,7 @@
       <td>Total : <%= item.total %>, </td>
     <% if item.status == "Placed" %>
       <td>Status : <%= item.status %> </td>
-      <%= link_to '<button class="Menu-button" type="button">Delivered</button>'.html_safe, update_allorder_path(item.id), method: :put,:onclick => "alert('Are U sure')" %>
+      <%= link_to '<button class="Menu-button" type="button">Delivered</button>'.html_safe, order_path(item.id), method: :put,:onclick => "alert('Are U sure')" %>
     <% else %>
       <td>Status : <%= item.status %> </td>
     <% end %>

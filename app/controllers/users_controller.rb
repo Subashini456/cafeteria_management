@@ -6,17 +6,16 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.new(
-      name: params[:name],
-      role: params[:role],
-      email: params[:email],
-      password: params[:password],
-    )
+    user = User.new(create_user)
     if user.save
       redirect_to "/"
     else
       flash[:error] = user.errors.full_messages.join(", ")
       redirect_to new_user_path
     end
+  end
+
+  def create_user
+    params.permit(:name, :role, :email, :password)
   end
 end
