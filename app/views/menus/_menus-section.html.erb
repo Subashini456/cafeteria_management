@@ -10,35 +10,39 @@
       <% menus.each do |menu|%>
         <li class="MenuItem">
           <div class="MenuItem-container">
-            <label >
+            <label>
+
               <p class="MenuItem-text">
                 <span class="AlignLeft"> <%= menu.name %> </span>
                 <span class="AlignRight"> Rs <%= menu.price %> </span>
               </p>
 
               <p class="MenuItemDescription-text">
-                <tr>
-                  <td><%= menu.description%></td>
-                  <td>
-                    <% if @current_user.is_customer? %>
-                      <%= form_for @orderfood do |form| %>
-                        <%= form.hidden_field :menu_id, :value => menu.id %>
-                        <%= form.number_field :quantity, :value => 1, :min => 1 %>
-                        <%= form.submit "Add to Cart", :class => "Menu-button" %>
-                      <% end %>
-                    <% end %>
-                  </td>
-                </tr>
+                <%= menu.description%>
               </p>
 
-              <% if @current_user.is_clerk? || @current_user.is_owner? %>
-                <%= link_to '<button class="Menu-button" type="button">Delete</button>'.html_safe, menu_path(menu.id), method: :delete,:onclick => "alert('Are you sure')" %>
-                <%= form_with url: "/menus/#{menu.id}", method: "put" do |form| %>
-                  <%= form.text_field :price, class: "AddMenu-text", step: "any" %>
-                  <%= form.submit "Update", :class => "Menu-button" %>
+              <p class="MenuAddToCard">
+                <% if @current_user.is_customer? %>
+                  <%= form_for @orderfood do |form| %>
+                    <%= form.hidden_field :menu_id, :value => menu.id %>
+                    <%= form.number_field :quantity,class: "AddMenu-text", :value => 1, :min => 1 %>
+                    <%= form.submit "Add to Card", :class => "Menu-button" %>
+                  <% end %>
                 <% end %>
-              <% end %>
+              </p>
+
+              <p class="MenuButtom-owner">
+                <% if @current_user.is_clerk? || @current_user.is_owner? %>
+                  <%= link_to '<button class="Menu-button" type="button">Delete</button>'.html_safe, menu_path(menu.id), method: :delete,:onclick => "alert('Are you sure')" %>
+                  <%= form_with url: "/menus/#{menu.id}", method: "put" do |form| %>
+                    <%= form.text_field :price, placeholder: "Price", class: "AddMenu-text", step: "any" %>
+                    <%= form.submit "Update", :class => "Menu-button" %>
+                  <% end %>
+                <% end %>
+              </p>
+
             </label>
+
           </div>
 
         </li>

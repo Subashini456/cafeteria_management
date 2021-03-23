@@ -11,9 +11,8 @@ class OrderfoodsController < ApplicationController
   end
 
   def destroy
-    @order = current_order
-    @orderfood = @order.orderfoods.find(params[:id])
-    @orderfood.destroy
+    orderfood = current_order.orderfoods.find(params[:id])
+    orderfood.destroy
     redirect_to new_card_path
   end
 

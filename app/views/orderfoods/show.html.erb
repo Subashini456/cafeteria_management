@@ -6,7 +6,6 @@
             <p>Price : <%= item.menu.price %></p>
             <p>Quantity : <%= item.quantity %></p>
             <p>Subtotal : <%= item.subtotal %></p>
-
             <%= link_to '<button class="Add-button" type="button">Remove</button>'.html_safe, orderfood_path(item), method: :delete %>
         </section>
         <br>

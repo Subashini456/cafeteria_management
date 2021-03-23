@@ -102,8 +102,17 @@ li{
 
 .Menu-button{
   font-size: 15px;
+  padding: 10px;
   background-color:#9F7F15;
   color: #ffffff;
   border: 1px solid transparent;
   border-radius: 8px;
+}
+
+.MenuAddToCard {
+  padding-top: 10px;
+}
+
+.MenuButtom-owner {
+  float: right;
 }

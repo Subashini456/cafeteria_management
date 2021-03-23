@@ -1,4 +1,10 @@
 class OrdersController < ApplicationController
+  def index
+  end
+
+  def new
+  end
+
   def create
     Order.new(user_id: current_user.id, status: 0)
   end
