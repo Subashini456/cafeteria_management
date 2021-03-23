@@ -15,15 +15,14 @@ class MenusController < ApplicationController
   end
 
   def create
-    new_menu = Menu.new(create_menu)
-    error_condition(new_menu)
+    new_menu = Menu.new(menu_params)
+    check_save_condition(new_menu)
   end
 
   def update
     up_menu = Menu.find(params[:id])
-    up_menu.price = params[:price]
-    up_menu.description = params[:description]
-    error_condition(up_menu)
+    up_menu.update(menu_params)
+    check_save_condition(up_menu)
   end
 
   def destroy
@@ -33,18 +32,18 @@ class MenusController < ApplicationController
 
   private
 
-  def create_menu
+  def menu_params
     params.permit(:name, :description, :menu_category, :price)
   end
 
   private
 
-  def error_condition(menu)
+  def check_save_condition(menu)
     if menu.save
-      redirect_to new_menu_path
+      redirect_to menus_path
     else
       flash[:error] = menu.errors.full_messages.join(", ")
-      redirect_to new_menu_path
+      redirect_to menus_path
     end
   end
 end

@@ -12,8 +12,8 @@ class OrderFoodsController < ApplicationController
 
   def update
     up_order = OrderFood.find(params[:id])
-    up_order.quantity = params[:quantity]
-    error_condition(up_order)
+    up_order.update(update_params)
+    check_save_condition(up_order)
   end
 
   def destroy
@@ -24,11 +24,19 @@ class OrderFoodsController < ApplicationController
 
   private
 
+  def update_params
+    params.permit(:quantity)
+  end
+
+  private
+
   def order_params
     params.require(:order_food).permit(:menu_id, :quantity)
   end
 
-  def error_condition(up_order)
+  private
+
+  def check_save_condition(up_order)
     if up_order.save
       redirect_to new_card_path
     else
