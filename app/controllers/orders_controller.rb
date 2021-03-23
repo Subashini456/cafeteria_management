@@ -9,7 +9,11 @@ class OrdersController < ApplicationController
 
   def update
     uporder = Order.find(params[:id])
-    uporder.status == 0 ? order_placed(uporder) : order_delivered(uporder)
+    if uporder.status == 0
+      order_placed(uporder)
+    elsif uporder.status == 1
+      order_delivered(uporder)
+    end
   end
 
   def destroy
