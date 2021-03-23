@@ -1,10 +1,4 @@
 class OrdersController < ApplicationController
-  def index
-  end
-
-  def new
-  end
-
   def create
     Order.new(user_id: current_user.id, status: 0)
   end
@@ -15,16 +9,11 @@ class OrdersController < ApplicationController
 
   def update
     uporder = Order.find(params[:id])
-    if uporder.status == 0
-      order_placed(uporder)
-    elsif uporder.status == 1
-      order_delivered(uporder)
-    end
+    uporder.status == 0 ? order_placed(uporder) : order_delivered(uporder)
   end
 
   def destroy
-    downorder = Order.find(params[:id])
-    downorder.destroy
+    Order.find(params[:id]).destroy
     redirect_to new_allorder_path
   end
 
