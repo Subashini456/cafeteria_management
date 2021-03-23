@@ -114,5 +114,19 @@ li{
 }
 
 .MenuButtom-owner {
-  float: right;
+  display: flex;
+  justify-content: space-between;
+}
+
+.MenuLabel {
+  text-align: center;
+  padding-top: 30px;
+  font-size: 32px;
+  color: #655A58;
+}
+
+.MenuUpdate {
+  padding-top: 30px;
+  display: flex;
+  justify-content:space-evenly;
 }

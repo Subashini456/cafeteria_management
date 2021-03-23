@@ -10,9 +10,8 @@ class MenusController < ApplicationController
   end
 
   def show
-    id = params[:id]
-    todo = Menu.find(id)
-    render plain: "Show"
+    menu_id = Menu.find(params[:id])
+    @menus = Menu.where(:id => menu_id)
   end
 
   def create
@@ -23,6 +22,7 @@ class MenusController < ApplicationController
   def update
     up_menu = Menu.find(params[:id])
     up_menu.price = params[:price]
+    up_menu.description = params[:description]
     error_condition(up_menu)
   end
 

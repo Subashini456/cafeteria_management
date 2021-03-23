@@ -33,11 +33,8 @@
 
               <p class="MenuButtom-owner">
                 <% if @current_user.is_clerk? || @current_user.is_owner? %>
+                  <%= link_to '<button class="Menu-button" type="button">Update</button>'.html_safe, menu_path(menu.id) %>
                   <%= link_to '<button class="Menu-button" type="button">Delete</button>'.html_safe, menu_path(menu.id), method: :delete,:onclick => "alert('Are you sure')" %>
-                  <%= form_with url: "/menus/#{menu.id}", method: "put" do |form| %>
-                    <%= form.text_field :price, placeholder: "Price", class: "AddMenu-text", step: "any" %>
-                    <%= form.submit "Update", :class => "Menu-button" %>
-                  <% end %>
                 <% end %>
               </p>
 
