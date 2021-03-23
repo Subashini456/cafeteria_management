@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_22_122257) do
+ActiveRecord::Schema.define(version: 2021_03_23_053044) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2021_03_22_122257) do
     t.string "menu_category"
   end
 
-  create_table "orderfoods", force: :cascade do |t|
+  create_table "order_foods", force: :cascade do |t|
     t.bigint "order_id"
     t.bigint "menu_id"
     t.float "unit_price"

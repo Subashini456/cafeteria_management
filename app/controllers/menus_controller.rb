@@ -1,7 +1,7 @@
 class MenusController < ApplicationController
   def index
     @menus = Menu.all
-    @orderfood = current_order.orderfoods.new
+    @order_food = current_order.order_foods.new
     #render plain: Menu.all.map { |menu| menu.to_pleasent_string }.join("\n")
     render "index"
   end
@@ -22,8 +22,7 @@ class MenusController < ApplicationController
 
   def update
     up_menu = Menu.find(params[:id])
-    price = params[:price]
-    up_menu.price = price
+    up_menu.price = params[:price]
     error_condition(up_menu)
   end
 

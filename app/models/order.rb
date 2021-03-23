@@ -1,11 +1,11 @@
 class Order < ApplicationRecord
   belongs_to :user
-  has_many :orderfoods
+  has_many :order_foods
 
   before_save :set_total
 
   def total
-    orderfoods.collect { |orderfood| orderfood.valid? ? orderfood.unit_price * orderfood.quantity : 0 }.sum
+    order_foods.collect { |order_food| order_food.valid? ? order_food.unit_price * order_food.quantity : 0 }.sum
   end
 
   def set_total
