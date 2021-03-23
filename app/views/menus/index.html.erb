@@ -1,13 +1,8 @@
 <main>
   <article>
-    <h1 class="MenuPage-title">Cafeteria Management</h1>
+    <h1 class="MenuPage-title">Cafeteria Management
 
-
-    <% if @current_user.is_clerk? || @current_user.is_owner? %>
-      <%= render partial: "add-menu-section", locals: {
-        section_title: "Edit Menu Here"
-      } %>
-    <% end %>
+    <%= link_to '<button class="AddMenu-button AlignRight" type="button">Add Menu</button>'.html_safe, new_menu_path %></h1>
 
     <%= render partial: "menus-section", locals: {
       section_title: "Breakfast",

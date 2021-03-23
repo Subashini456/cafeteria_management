@@ -3,6 +3,7 @@
   font-weight: bold;
   line-height: 1.6;
   margin-bottom: 24px;
+  margin-left: 30px;
   color:#9F7F15;
   text-align: center;
 }
@@ -115,7 +116,7 @@ li{
 
 .MenuButtom-owner {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .MenuLabel {

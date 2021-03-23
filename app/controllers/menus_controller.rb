@@ -7,11 +7,11 @@ class MenusController < ApplicationController
   end
 
   def new
+    render "menus/new"
   end
 
   def show
-    menu_id = Menu.find(params[:id])
-    @menus = Menu.where(:id => menu_id)
+    @menus = Menu.where(:id => Menu.find(params[:id]))
   end
 
   def create
@@ -42,10 +42,10 @@ class MenusController < ApplicationController
 
   def error_condition(menu)
     if menu.save
-      redirect_to menus_path
+      redirect_to new_menu_path
     else
       flash[:error] = menu.errors.full_messages.join(", ")
-      redirect_to menus_path
+      redirect_to new_menu_path
     end
   end
 end
