@@ -1,5 +1,3 @@
-<% if @current_user.is_clerk? || @current_user.is_owner? %>
-  <%= render partial: "add-menu-section", locals: {
+<%= render partial: "add-menu-section", locals: {
     section_title: "Add Menu Here"
-  } %>
-<% end %>
+} %>

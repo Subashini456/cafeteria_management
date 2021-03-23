@@ -7,7 +7,7 @@
             <p>Quantity : <%= item.quantity %></p>
             <p>Subtotal : <%= item.subtotal %></p>
             <%= form_with url: "/order_foods/#{item.id}", method: "put",class: "MenuUpdate" do |form| %>
-                <%= form.number_field :quantity,class: "AddMenu-text", :value => 1, :min => 1 %>
+                <%= form.number_field :quantity,class: "AddMenu-text", :value => item.quantity, :min => 1 %>
                 <%= form.submit "Update", :class => "Menu-button" %>
             <% end %>
             <%= link_to '<button class="Menu-button" type="button">Remove</button>'.html_safe, order_food_path(item), method: :delete %>

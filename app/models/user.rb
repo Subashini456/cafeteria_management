@@ -6,14 +6,14 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
 
   def is_clerk?
-    clerk = role == "Clerk" ? true : false
+    role == "Clerk" ? true : false
   end
 
   def is_owner?
-    owner = role == "Owner" ? true : false
+    role == "Owner" ? true : false
   end
 
   def is_customer?
-    owner = role == "Customer" ? true : false
+    role == "Customer" ? true : false
   end
 end
