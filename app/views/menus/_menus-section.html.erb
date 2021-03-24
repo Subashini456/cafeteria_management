@@ -24,7 +24,7 @@
                 <% if @current_user.is_customer? %>
                   <%= form_for @order_food do |form| %>
                     <%= form.hidden_field :menu_id, :value => menu.id %>
-                    <%= form.number_field :quantity,class: "AddMenu-text", :value => 1, :min => 1 %>
+                    <%= form.number_field :quantity,class: "AddMenu-text",placeholder: "Add quantity", :value => 1, :min => 1 %>
                     <%= form.submit "Add to Card", :class => "Menu-button" %>
                   <% end %>
                 <% end %>

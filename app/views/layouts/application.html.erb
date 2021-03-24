@@ -24,6 +24,14 @@
         <%= flash[:error] %>
       </p>
     <% end%>
+
+    <% if flash[:notice] %>
+      <p class="Flash-error">
+        <%= current_order.total_order%>
+        <%= flash[:notice] %>
+      </p>
+    <% end%>
+
     <%= yield %>
   </body>
 </html>

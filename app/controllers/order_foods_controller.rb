@@ -1,9 +1,10 @@
 class OrderFoodsController < ApplicationController
   def create
-    @order = current_order
-    @order_food = @order.order_foods.new(order_params)
-    @order.save
-    session[:order_id] = @order.id
+    order = current_order
+    @order_food = order.order_foods.new(order_params)
+    order.save
+    session[:order_id] = order.id
+    check_create_condition(order)
   end
 
   def show
@@ -42,6 +43,16 @@ class OrderFoodsController < ApplicationController
     else
       flash[:error] = menu.errors.full_messages.join(", ")
       redirect_to new_card_path
+    end
+  end
+
+  def check_create_condition(order)
+    if order.save
+      flash[:notice] = "menu saved successfully"
+      redirect_to menus_path
+    else
+      flash[:error] = order.errors.full_messages.join(", ")
+      redirect_to menus_path
     end
   end
 end

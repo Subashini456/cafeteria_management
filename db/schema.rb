@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_23_151000) do
+ActiveRecord::Schema.define(version: 2021_03_24_175044) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2021_03_23_151000) do
     t.float "total"
     t.bigint "user_id"
     t.integer "status"
+    t.integer "total_order"
   end
 
   create_table "users", force: :cascade do |t|

@@ -5,4 +5,8 @@ class Order < ApplicationRecord
   def total
     order_foods.collect { |order_food| order_food.valid? ? order_food.unit_price * order_food.quantity : 0 }.sum
   end
+
+  def total_order
+    order_foods.collect { |order_food| order_food.id }.count
+  end
 end
