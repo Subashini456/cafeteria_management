@@ -46,7 +46,6 @@ li{
   margin-left: 16px;
   margin-bottom: 8px;
   display: flex;
-  justify-content: space-between;
 }
 
 .MenuItem-text{
@@ -116,7 +115,7 @@ li{
 
 .MenuButtom-owner {
   display: flex;
-  justify-content:space-between;
+  justify-content:flex-end;
 }
 
 .MenuLabel {

@@ -8,7 +8,7 @@
 
     <% if @current_user.is_customer? %>
       <%= current_order.total_order %>
-      <%= link_to '<img src="carts.svg" AlignRight">'.html_safe, new_card_path%>
+      <%= link_to '<img src="carts.svg" class=AlignRight">'.html_safe, new_card_path%>
     <% end%>
 
     </h1>
@@ -37,10 +37,6 @@
       section_title: "Snacks",
       menus: Menu.snacks
     } %>
-
-    <% if @current_user.is_customer? %>
-      <%= link_to '<button class="AddMenu-button AlignRight" type="button">View card</button>'.html_safe, new_card_path%>
-    <% end%>
 
     <% if @current_user.is_clerk? || @current_user.is_owner? %>
        <%= link_to '<button class="AddMenu-button AlignRight" type="button">All Orders</button>'.html_safe, new_allorder_path%>
