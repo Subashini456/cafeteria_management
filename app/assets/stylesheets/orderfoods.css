@@ -40,9 +40,14 @@
 .OrderFood-tableHeader, .OrderHistory-header {
   border: 1px solid black;
   height: 40px;
+  box-sizing: content-box;
   font-size: 24px;
   font-weight: bold;
 
+}
+
+li {
+  list-style-type: decimal;
 }
 
 .OrderFood-tablecontent {
@@ -57,11 +62,12 @@
 
 .OrderHistory-table {
   width: 100%;
-  border: 1px solid black;
+  border: 3px solid black;
+  border-spacing: 40px;
   text-align: center;
 }
 
 .OrderHistory-content {
   font-size: 20px;
-  border: 1px solid black;
+  border: 1px dotted black;
 }
