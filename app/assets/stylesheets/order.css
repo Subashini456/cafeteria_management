@@ -1,0 +1,29 @@
+.Order-table-main {
+  padding-top: 20px;
+}
+
+.Order-table {
+  width: 100%;
+  text-align: center;
+  border: 1px solid black;
+}
+
+.Order-tableHeader {
+  border: 1px solid black;
+  height: 40px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.Order-tablecontent {
+  height: 40px;
+  font-size: 20px;
+  margin: 12px;
+}
+
+.Deliver-button {
+  background-color: #9F7F15;
+  color: white;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}

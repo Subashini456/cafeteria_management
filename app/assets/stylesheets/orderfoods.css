@@ -28,3 +28,24 @@
   border: 1px solid transparent;
   border-radius: 8px;
 }
+
+
+.OrderFood-table {
+  width: 100%;
+  text-align: center;
+  border: 1px solid black;
+
+}
+
+.OrderFood-tableHeader {
+  border: 1px solid black;
+  height: 40px;
+  font-size: 24px;
+  font-weight: bold;
+
+}
+
+.OrderFood-tablecontent {
+  font-size: 20px;
+  margin: 12px;
+}

@@ -1,17 +1,26 @@
+<section class="Order-table-main">
+<table class="Order-table">
+  <tr class="Order-tableHeader">
+    <th>Order id</th>
+    <th>User id</th>
+    <th>Total</th>
+    <th>status</th>
+  </tr>
 
-</section>
-  <% @order.each do |item| %>
-    <section class="OrderFood-list">
-        <p>Order id :<%= item.id %> </p>
-        <p>User id : <%= item.user_id %> </p>
-        <p>Total : <%= item.total %></p>
+    <% @order.each do |item| %>
+      <tr class="Order-tablecontent">
+        <td><%= item.id %> </td>
+        <td><%= item.user_id %> </td>
+        <td><%= item.total %></td>
         <% if item.status == 1 %>
-          <p>Status : Placed </p>
-          <%= link_to '<button class="Add-button" type="button">Delivered</button>'.html_safe, order_path(item.id), method: :put,:onclick => "alert('Are U sure')" %>
+          <td>Placed
+          <%= link_to '<button class= "Deliver-button" type="button">Delivered</button>'.html_safe, order_path(item.id), method: :put,:onclick => "alert('Are U sure')" %></td>
         <% elsif item.status == 2 %>
-          <p>Status : Delivered </p>
+          <td>Delivered </td>
+        <% else %>
+          <td><% item.destroy %></td>
         <% end %>
-    </section>
-    <br/>
-  <% end %>
+      </tr>
+    <% end %>
+</table>
 </section>
