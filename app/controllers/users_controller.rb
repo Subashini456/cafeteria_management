@@ -5,9 +5,18 @@ class UsersController < ApplicationController
     render "users/new"
   end
 
+  def show
+    @user = User.where(:role => "Clerk")
+  end
+
   def create
     user = User.new(create_user)
     create_error(user)
+  end
+
+  def destroy
+    User.find(params[:id]).destroy
+    redirect_to clerk_path
   end
 
   private

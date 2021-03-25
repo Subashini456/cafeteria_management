@@ -3,7 +3,6 @@
   font-weight: bold;
   line-height: 1.6;
   margin-bottom: 24px;
-  margin-left: 30px;
   color:#9F7F15;
   text-align: center;
 }
@@ -126,6 +125,8 @@ li{
 }
 
 .MenuUpdate {
+  display: flex;
+  justify-content: space-evenly;
   padding-top: 20px;
   padding-bottom: 20px;
 }

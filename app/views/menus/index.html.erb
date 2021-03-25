@@ -5,7 +5,9 @@
     <% if @current_user.is_clerk? || @current_user.is_owner? %>
       <%= link_to '<button class="AddMenu-button AlignRight" type="button">Add Menu</button>'.html_safe, new_menu_path %>
     <% end %>
-
+    <% if @current_user.is_owner? %>
+      <%= link_to '<button class="AddMenu-button AlignLeft" type="button">Clerks Detail</button>'.html_safe, clerk_path %>
+    <% end %>
     <% if @current_user.is_customer? %>
       <%= current_order.total_order %>
       <%= link_to '<img src="carts.svg" class=AlignRight">'.html_safe, new_card_path%>

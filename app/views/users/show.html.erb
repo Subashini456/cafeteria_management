@@ -1,0 +1,21 @@
+<p class="UserHeader">
+  <%= link_to "Back to menu", menus_path%>
+  <%= link_to "Sign-out", destroy_session_path, method: "delete"%>
+</p>
+<section class="Order-table-main">
+  <table class="Order-table">
+    <tr class="Order-tableHeader">
+      <th>User id</th>
+      <th>Name</th>
+      <th>Remove Clerk</th>
+    </tr>
+
+    <% @user.each do |user|%>
+      <tr class="Order-tablecontent">
+        <td><%= user.id %> </td>
+        <td><%= user.name %> </td>
+        <td><%= link_to '<button class= "Deliver-button" type="button">Remove</button>'.html_safe, destroy_clerk_path(user.id), method: :delete,:onclick => "alert('Are U sure')" %></td>
+      </tr>
+    <% end %>
+  </table>
+</section>
