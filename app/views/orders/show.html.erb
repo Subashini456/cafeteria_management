@@ -1,11 +1,11 @@
 <section class="Order-table-main">
-<table class="Order-table">
-  <tr class="Order-tableHeader">
-    <th>Order id</th>
-    <th>User id</th>
-    <th>Total</th>
-    <th>status</th>
-  </tr>
+  <table class="Order-table">
+    <tr class="Order-tableHeader">
+      <th>Order id</th>
+      <th>User id</th>
+      <th>Total</th>
+      <th>status</th>
+    </tr>
 
     <% @order.each do |item| %>
       <tr class="Order-tablecontent">
@@ -13,8 +13,10 @@
         <td><%= item.user_id %> </td>
         <td><%= item.total %></td>
         <% if item.status == 1 %>
-          <td>Placed
-          <%= link_to '<button class= "Deliver-button" type="button">Delivered</button>'.html_safe, order_path(item.id), method: :put,:onclick => "alert('Are U sure')" %></td>
+          <td>
+            Placed
+            <%= link_to '<button class= "Deliver-button" type="button">Delivered</button>'.html_safe, order_path(item.id), method: :put,:onclick => "alert('Are U sure')" %>
+          </td>
         <% elsif item.status == 2 %>
           <td>Delivered </td>
         <% else %>
@@ -22,5 +24,5 @@
         <% end %>
       </tr>
     <% end %>
-</table>
+  </table>
 </section>

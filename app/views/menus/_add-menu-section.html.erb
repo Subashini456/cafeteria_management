@@ -4,26 +4,31 @@
   </div>
 
   <section class="UsersOwner">
-      <%= form_with url: "/menus",method: "post" do |form| %>
-        <div class="AddMenu-section">
-          <p class="AddMenu-label">Menu Category </p>
-          <%= form.select :menu_category,options_for_select([["Select One",""],"Breakfast","Lunch","Dinner","Beverages","Snacks"]) ,{},{:class => "AddMenu-text"}%>
-        </div>
-        <div class="AddMenu-section">
-          <p class="AddMenu-label">Menu Name </p>
-          <%= form.text_field :name, class: "AddMenu-text" %>
-        </div>
-        <div class="AddMenu-section">
-          <p class="AddMenu-label">Description </p>
-          <%= form.text_field :description, class: "AddMenu-text" %>
-        </div>
-        <div class="AddMenu-section">
-          <p class="AddMenu-label">Price </p>
-          <%= form.text_field :price, class: "AddMenu-text", step: "any" %>
-        </div>
-        <div class="AddMenu-section">
-          <%= form.submit "Add",class: "AddMenu-button" %>
-        </div>
-      <% end %>
-    </section>
+    <%= form_with url: "/menus",method: "post" do |form| %>
+
+      <div class="AddMenu-section">
+        <p class="AddMenu-label">Menu Category </p>
+        <%= form.select :menu_category,options_for_select([["Select One",""],"Breakfast","Lunch","Dinner","Beverages","Snacks"]) ,{},{:class => "AddMenu-text"}%>
+      </div>
+
+      <div class="AddMenu-section">
+        <p class="AddMenu-label">Menu Name </p>
+        <%= form.text_field :name, class: "AddMenu-text" %>
+      </div>
+
+      <div class="AddMenu-section">
+        <p class="AddMenu-label">Description </p>
+        <%= form.text_field :description, class: "AddMenu-text" %>
+      </div>
+
+      <div class="AddMenu-section">
+        <p class="AddMenu-label">Price </p>
+        <%= form.text_field :price, class: "AddMenu-text", step: "any" %>
+      </div>
+
+      <div class="AddMenu-section">
+        <%= form.submit "Add",class: "AddMenu-button" %>
+      </div>
+    <% end %>
+  </section>
 </section>

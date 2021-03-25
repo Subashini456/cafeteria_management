@@ -1,65 +1,9 @@
-<section class="OrderFood-main">
-        <table class="OrderFood-table">
-            <tr class="OrderFood-tableHeader">
-                <th>Name</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                <th>Subtotal</th>
-                <th>Update items</th>
-                <th>Remove items</th>
-            </tr>
-            <tr>
-                <% @order_foods.each do |item| %>
-                <tr class="OrderFood-tablecontent">
-                    <td><%= item.menu.name %></td>
-                    <td><%= item.menu.price %></td>
-                    <td><%= item.quantity %></td>
-                    <td><%= item.subtotal %></td>
-                    <td><%= form_with url: "/order_foods/#{item.id}", method: "put",class: "MenuUpdate" do |form| %>
-                        <%= form.number_field :quantity,class: "AddMenu-text", :value => item.quantity, :min => 1 %>
-                        <%= form.submit "Update", :class => "Menu-button" %>
-                    <% end %></td>
-                    <td><%= link_to '<button class="Menu-button" type="button">Remove</button>'.html_safe, order_food_path(item), method: :delete %></td>
-                </tr>
-                <% end %>
-            </tr>
-        </table>
+<section>
+    <%= render partial: "display-order-items-section", locals: {
+        section_title: "Cart items"
+    } %>
 
-
-
-    <tr class="OrderFood-result">Your current card value has a total of: <%= current_order.total %></tr>
-    <tr>
-        <% if Order.where(:id => current_order.id).exists? %>
-            <%= link_to '<button class="Add-button" type="button">Place Order</button>'.html_safe, order_path(current_order.id), method: :put,:onclick => "alert('Order Placed, will be delivered shortly')" %>
-        <% else %>
-            <tr class="OrderFood-result">please add values to card</tr>
-        <% end %>
-    </tr>
-
-</section>
-
-<section class = "Order-history">
-    <h1>Order History</h1>
-    <table class = "OrderHistory-table">
-    <tr class="OrderHistory-header">
-        <th> Order id </th>
-        <th> No. of items </th>
-        <th> Total </th>
-        <th> Orders items </th>
-    </tr>
-    <% @orders.each do |item|%>
-        <% if item.status == 2 %>
-            <tr class="OrderHistory-content">
-                <td><%= item.id %></td>
-                <td><%= item.total_order%></td>
-                <td><%= item.total %></td>
-                <td>
-                <% item.order_foods.each do |food|%>
-                    <p><li><%= link_to 'check menu' , menu_path(food.menu_id) %></li></p>
-                <% end %>
-                </td>
-            </tr>
-        <% end %>
-    <% end %>
-    </table>
+    <%= render partial: "order-history-section", locals: {
+        section_title: "Past Order History"
+    } %>
 </section>

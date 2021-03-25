@@ -1,0 +1,28 @@
+<section class = "Order-history">
+  <div class="MenuSectionTitle">
+    <p class="MenuSectionTitle-text"><%= section_title%></p>
+  </div>
+
+  <table class = "OrderHistory-table">
+    <tr class="OrderHistory-header">
+      <th> Order id </th>
+      <th> No. of items </th>
+      <th> Total </th>
+      <th> Orders items </th>
+    </tr>
+    <% @orders.each do |item|%>
+      <% if item.status == 2 %>
+        <tr class="OrderHistory-content">
+          <td><%= item.id %></td>
+          <td><%= item.total_order%></td>
+          <td><%= item.total %></td>
+          <td>
+            <% item.order_foods.each do |food|%>
+              <p><li><%= link_to 'check menu' , menu_path(food.menu_id) %></li></p>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    <% end %>
+  </table>
+</section>

@@ -29,6 +29,7 @@
                   <% end %>
                 </p>
               </p>
+
               <p class="MenuAddToCard">
                 <% if @current_user.is_customer? %>
                   <%= form_for @order_food do |form| %>
@@ -39,15 +40,11 @@
                 <% end %>
               </p>
 
-
-
-
             </label>
-
           </div>
-
         </li>
       <% end %>
     <% end %>
   </ul>
+
 </section>
