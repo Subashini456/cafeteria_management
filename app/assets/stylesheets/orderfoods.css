@@ -37,7 +37,7 @@
 
 }
 
-.OrderFood-tableHeader {
+.OrderFood-tableHeader, .OrderHistory-header {
   border: 1px solid black;
   height: 40px;
   font-size: 24px;
@@ -48,4 +48,21 @@
 .OrderFood-tablecontent {
   font-size: 20px;
   margin: 12px;
+}
+
+.Order-history {
+  padding-top : 100px;
+  margin-top: 50px;
+  width: 100%;
+}
+
+.OrderHistory-table {
+  width: 100%;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.OrderHistory-content {
+  font-size: 20px;
+  border: 1px solid black;
 }

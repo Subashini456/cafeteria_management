@@ -9,6 +9,7 @@ class OrderFoodsController < ApplicationController
 
   def show
     @order_foods = OrderFood.where(:order_id => current_order.id)
+    @orders = current_user.orders
   end
 
   def update

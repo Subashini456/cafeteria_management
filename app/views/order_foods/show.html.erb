@@ -1,6 +1,4 @@
 <section class="OrderFood-main">
-
-
         <table class="OrderFood-table">
             <tr class="OrderFood-tableHeader">
                 <th>Name</th>
@@ -29,13 +27,39 @@
 
 
 
-    <p class="OrderFood-result">Your current card value has a total of: <%= current_order.total %></p>
-    <p>
+    <tr class="OrderFood-result">Your current card value has a total of: <%= current_order.total %></tr>
+    <tr>
         <% if Order.where(:id => current_order.id).exists? %>
             <%= link_to '<button class="Add-button" type="button">Place Order</button>'.html_safe, order_path(current_order.id), method: :put,:onclick => "alert('Order Placed, will be delivered shortly')" %>
         <% else %>
-            <p class="OrderFood-result">please add values to card</p>
+            <tr class="OrderFood-result">please add values to card</tr>
         <% end %>
-    </p>
+    </tr>
 
+</section>
+
+<section class = "Order-history">
+    <h1>Order History</h1>
+    <table class = "OrderHistory-table">
+    <tr class="OrderHistory-header">
+        <th> Order id </th>
+        <th> No. of items </th>
+        <th> Total </th>
+        <th> Orders items </th>
+    </tr>
+    <% @orders.each do |item|%>
+        <% if item.status == 2 %>
+            <tr class="OrderHistory-content">
+                <td><%= item.id %></td>
+                <td><%= item.total_order%></td>
+                <td><%= item.total %></td>
+                <td>
+                <% item.order_foods.each do |food|%>
+                    <p><li><%= link_to 'check menu' , menu_path(food.menu_id) %></li></p>
+                <% end %>
+                </td>
+            </tr>
+        <% end %>
+    <% end %>
+    </table>
 </section>

@@ -1,12 +1,20 @@
 <section>
-  <% @menus.each do |item|%>
-    <p class="MenuLabel">Name : <%= item.name %></p>
-    <p class="MenuLabel">Price : <%= item.price%></p>
-    <p class="MenuLabel">Description : <%= item.description%></p>
-    <%= form_with url: "/menus/#{item.id}", method: "put",class: "MenuUpdate" do |form| %>
-      <%= form.text_field :price, placeholder: "Price", class: "AddMenu-text", step: "any" %>
-      <%= form.text_field :description, placeholder: "Description", value: item.description, class: "AddMenu-text"%>
-      <%= form.submit "Update", :class => "Menu-button" %>
+  <% if @current_user.is_clerk? || @current_user.is_owner? %>
+    <% @menus.each do |item|%>
+      <p class="MenuLabel">Name : <%= item.name %></p>
+      <p class="MenuLabel">Price : <%= item.price%></p>
+      <p class="MenuLabel">Description : <%= item.description%></p>
+      <%= form_with url: "/menus/#{item.id}", method: "put",class: "MenuUpdate" do |form| %>
+        <%= form.text_field :price, placeholder: "Price", class: "AddMenu-text", step: "any" %>
+        <%= form.text_field :description, placeholder: "Description", value: item.description, class: "AddMenu-text"%>
+        <%= form.submit "Update", :class => "Menu-button" %>
+      <% end %>
+    <% end %>
+  <% else %>
+    <% @menus.each do |item|%>
+      <p class="MenuLabel">Name : <%= item.name %></p>
+      <p class="MenuLabel">Price : <%= item.price%></p>
+      <p class="MenuLabel">Description : <%= item.description%></p>
     <% end %>
   <% end %>
 </section>
