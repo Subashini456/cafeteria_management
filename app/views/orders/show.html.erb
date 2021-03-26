@@ -20,7 +20,7 @@
         <% elsif item.status == 2 %>
           <td>Delivered </td>
         <% else %>
-          <td><% item.destroy %></td>
+          <% item.destroy %>
         <% end %>
       </tr>
     <% end %>

@@ -33,7 +33,7 @@ class MenusController < ApplicationController
   private
 
   def menu_params
-    params.permit(:name, :description, :menu_category, :price).tap do |menu|
+    params.permit(:name, :description, :menu_category, :price, :availability_status).tap do |menu|
       menu[:user_id] = current_user.id
     end
   end

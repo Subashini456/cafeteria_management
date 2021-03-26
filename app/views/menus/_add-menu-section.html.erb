@@ -12,6 +12,11 @@
       </div>
 
       <div class="AddMenu-section">
+        <p class="AddMenu-label">Availability Status </p>
+        <%= form.select :availability_status, options_for_select([["Select One",""],"Available","Unavailable"]) ,{},{:class => "AddMenu-text"}%>
+      </div>
+
+      <div class="AddMenu-section">
         <p class="AddMenu-label">Menu Name </p>
         <%= form.text_field :name, class: "AddMenu-text" %>
       </div>

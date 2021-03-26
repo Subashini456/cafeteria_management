@@ -49,7 +49,7 @@ class OrderFoodsController < ApplicationController
 
   def check_create_condition(order)
     if order.save
-      flash[:notice] = "menu saved successfully"
+      flash[:notice] = "menu added to cart successfully"
       redirect_to menus_path
     else
       flash[:error] = order.errors.full_messages.join(", ")

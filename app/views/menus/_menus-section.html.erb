@@ -32,10 +32,14 @@
 
               <p class="MenuAddToCard">
                 <% if @current_user.is_customer? %>
-                  <%= form_for @order_food do |form| %>
-                    <%= form.hidden_field :menu_id, :value => menu.id %>
-                    <%= form.number_field :quantity,class: "AddMenu-text",placeholder: "Add quantity", :min => 1 %>
-                    <%= form.submit "Add to Cart", :class => "Menu-button" %>
+                  <% if menu.availability_status == "Available"%>
+                    <%= form_for @order_food do |form| %>
+                      <%= form.hidden_field :menu_id, :value => menu.id %>
+                      <%= form.number_field :quantity,class: "AddMenu-text",placeholder: "Add quantity", :min => 1 %>
+                      <%= form.submit "Add to Cart", :class => "Menu-button" %>
+                    <% end %>
+                  <% else %>
+                    <p>Unavailable</p>
                   <% end %>
                 <% end %>
               </p>
